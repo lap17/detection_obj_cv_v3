@@ -47,6 +47,8 @@ def mediapipe_f():
 
     #st.set_page_config(page_title="Streamlit Mediapipe WebApp", layout="wide")
     st.set_option("deprecation.showfileUploaderEncoding", False)
+    st.sidebar.markdown("""<center data-parsed=""><img src="http://drive.google.com/uc?export=view&id=1Mad62XWdziqcx9wijUODpzGzqYEGhafC" align="center"></center>""",unsafe_allow_html=True,)
+    st.sidebar.markdown(" ")
 
 
     # [start] [setup app pages, modules & data sources]__________________
