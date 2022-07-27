@@ -20,7 +20,7 @@ gc.enable()
 
 # [start] [defaults] ________________________________________________
 # local
-dataPath = r"mediapipe\data"
+dataPath = r"mediapipe/data"
 demoImages = ["reshot01.jpg", "reshot02.jpg", "reshot03.jpg", "reshot04.jpg"]
 
 # online
