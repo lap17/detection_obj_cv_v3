@@ -14,6 +14,7 @@ from PIL import Image
 import time
 import threading
 from streamlit_webrtc import VideoProcessorBase, webrtc_streamer, WebRtcMode
+from streamlit.legacy_caching import clear_cache
 
 lock = threading.Lock()
 
@@ -47,9 +48,15 @@ def detect_objects():
 
     st.sidebar.markdown("""<center data-parsed=""><img src="http://drive.google.com/uc?export=view&id=1Mad62XWdziqcx9wijUODpzGzqYEGhafC" align="center"></center>""",unsafe_allow_html=True,)
     st.sidebar.markdown(" ")
-    #st.title('Weapon Detection Demo')
 
+    def reload():
+        clear_cache()
+        gc.collect()
+        st.experimental_rerun()
 
+    pages = st.sidebar.columns([1, 1, 1])
+    if pages[1].button("Reload App"):
+        reload()
     #@st.cache(max_entries=2)
     def get_yolo5(label):
         if label=='Base':

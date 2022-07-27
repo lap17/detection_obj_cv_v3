@@ -9,7 +9,7 @@ def main():
 
     pages = {
         "Real time object detection": detect_objects,
-        "Mediapipe": mediapipe_f}
+        "Detection pipe": mediapipe_f}
     page_titles = pages.keys()
 
     page_title = st.sidebar.selectbox(
