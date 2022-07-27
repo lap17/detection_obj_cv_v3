@@ -51,7 +51,7 @@ def detect_objects():
 
     def reload():
         clear_cache()
-        gc.collect()
+        #gc.collect()
         st.experimental_rerun()
 
     pages = st.sidebar.columns([1, 1, 1])
