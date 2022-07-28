@@ -32,16 +32,6 @@ def func_detect_fire_smoke():
 
     #st.set_page_config(page_title="Weapon Detection Demo", layout="wide", initial_sidebar_state="collapsed")
 
-    st.sidebar.markdown("""<center data-parsed=""><img src="http://drive.google.com/uc?export=view&id=1Mad62XWdziqcx9wijUODpzGzqYEGhafC" align="center"></center>""",unsafe_allow_html=True,)
-    st.sidebar.markdown(" ")
-
-    def reload():
-        clear_cache()
-        st.experimental_rerun()
-
-    pages = st.sidebar.columns([1, 1, 1])
-    if pages[1].button("Reload App"):
-        reload()
 
     #@st.cache(max_entries=2)
     def get_yolo5(label):

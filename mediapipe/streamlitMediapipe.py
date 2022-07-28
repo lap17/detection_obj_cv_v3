@@ -9,7 +9,7 @@ from appSessionState import getSessionState
 
 
 def mediapipe_f():
-    gc.enable()  # garbage collection
+    #gc.enable()  # garbage collection
 
     webapp = getSessionState(
         idx_current_page=0,
@@ -33,11 +33,6 @@ def mediapipe_f():
     )
 
 
-    def reload():
-        clear_cache()
-        gc.collect()
-        st.experimental_rerun()
-
 
     appPages = ["Mediapipe Modules"]
     appModules = ["Hand Tracking", "Pose Estimation", "Face Detection", "Face Mesh"]
@@ -47,16 +42,12 @@ def mediapipe_f():
 
     #st.set_page_config(page_title="Streamlit Mediapipe WebApp", layout="wide")
     st.set_option("deprecation.showfileUploaderEncoding", False)
-    st.sidebar.markdown("""<center data-parsed=""><img src="http://drive.google.com/uc?export=view&id=1Mad62XWdziqcx9wijUODpzGzqYEGhafC" align="center"></center>""",unsafe_allow_html=True)
-    st.sidebar.markdown(" ")
+    #st.sidebar.markdown("""<center data-parsed=""><img src="http://drive.google.com/uc?export=view&id=1Mad62XWdziqcx9wijUODpzGzqYEGhafC" align="center"></center>""",unsafe_allow_html=True)
+    #st.sidebar.markdown(" ")
 
 
     # [start] [setup app pages, modules & data sources]__________________
-    pages = st.sidebar.columns([1, 1, 1])
 
-
-    if pages[1].button("Reload App"):
-        reload()
 
     if webapp.idx_current_page == appPages.index("Mediapipe Modules"):
         st.sidebar.write("")
