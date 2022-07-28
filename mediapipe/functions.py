@@ -103,7 +103,7 @@ def run_selected_module(_fs, media, type, ph_variables):
     module_selection = appModules[_fs.idx_current_module]
     if module_selection == "Hand Tracking":
         moreInfo1.markdown(
-            "*Click below for information on the Mediapipe **Hands** solution...*"
+            "*Click below for information on the Hands Detector solution...*"
         )
         new_value = ph_variables[1].number_input(
             "Number Of Hands [1-6]", min_value=1, max_value=6, value=_fs.num_hands
@@ -124,7 +124,7 @@ def run_selected_module(_fs, media, type, ph_variables):
 
     elif module_selection == "Pose Estimation":
         moreInfo1.markdown(
-            "*Click below for information on the Mediapipe **Pose** solution...*"
+            "*Click below for information on the Pose Detector solution...*"
         )
         new_value = ph_variables[1].number_input(
             "Smooth Landmarks [0/1]", min_value=0, max_value=1, value=_fs.smooth_lms
@@ -145,7 +145,7 @@ def run_selected_module(_fs, media, type, ph_variables):
 
     elif module_selection == "Face Detection":
         moreInfo1.markdown(
-            "*Click below for information on the Mediapipe **Face Detection** solution...*"
+            "*Click below for information on the Face Detection solution...*"
         )
         new_value = ph_variables[1].number_input(
             "Model Selection [0/1]", min_value=0, max_value=1, value=_fs.face_model
@@ -166,7 +166,7 @@ def run_selected_module(_fs, media, type, ph_variables):
 
     elif module_selection == "Face Mesh":
         moreInfo1.markdown(
-            "*Click below for information on the Mediapipe **Face Mesh** solution...*"
+            "*Click below for information on the Face Mesh solution...*"
         )
         new_value = ph_variables[1].number_input(
             "Number Of Faces [1-5]", min_value=1, max_value=5, value=_fs.num_faces

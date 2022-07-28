@@ -61,7 +61,7 @@ def mediapipe_f():
     if webapp.idx_current_page == appPages.index("Mediapipe Modules"):
         st.sidebar.write("")
         mp_selectors = st.sidebar.columns([1, 1])
-        module_selection = mp_selectors[0].selectbox("Mediapipe Solution:", appModules,
+        module_selection = mp_selectors[0].selectbox("Modules:", appModules,
             index=webapp.idx_current_module,
         )
         if module_selection != appModules[webapp.idx_current_module]:

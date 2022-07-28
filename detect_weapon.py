@@ -19,7 +19,7 @@ from streamlit.legacy_caching import clear_cache
 lock = threading.Lock()
 
 
-def detect_objects():
+def func_detect_weapon():
     CLASSES_CUSTOM = [ 'bill', 'card', 'face', 'knife', 'mask', 'firearm', 'purse', 'smartphone']
     CLASSES_BASE= [ 'person', 'bicycle', 'car', 'motorcycle', 'airplane', 'bus', 
                 'train', 'truck', 'boat', 'traffic light', 'fire hydrant', 
@@ -51,12 +51,12 @@ def detect_objects():
 
     def reload():
         clear_cache()
-        #gc.collect()
         st.experimental_rerun()
 
     pages = st.sidebar.columns([1, 1, 1])
     if pages[1].button("Reload App"):
         reload()
+
     #@st.cache(max_entries=2)
     def get_yolo5(label):
         if label=='Base':
@@ -124,7 +124,7 @@ def detect_objects():
                 model = get_yolo5(model_type)
                 st.session_state[cache_key] = model
 
-    st.success('Loading the model.. Done!')
+    #st.success('Loading the model.. Done!')
 
     confidence_threshold = st.slider("Confidence threshold", 0.0, 1.0, DEFAULT_CONFIDENCE_THRESHOLD, 0.05)
 
